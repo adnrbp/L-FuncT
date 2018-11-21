@@ -1,6 +1,8 @@
+
 data BookInfo = Book Int String [String]
 				deriving (Show)
--- Book: value/data constructor //use to create a value of bookInfo Type
+-- BookInfo: type constructor //return value
+-- Book: value/data constructor (use to refer to BookInfo) //use to create a value of bookInfo Type
 -- //fields:
 -- Int: id
 -- String: name
@@ -13,3 +15,6 @@ data MagazineInfo = Magazine Int String [String]
 
 myInfo = Book 9620165012455 "Concepts of Programming"
 	["Orlando James", "Mark Jackson"]
+
+-- using same name: type constructor and value constructor
+data BookReview = BookReview BookInfo CustomerID String
