@@ -18,3 +18,15 @@ myInfo = Book 9620165012455 "Concepts of Programming"
 
 -- using same name: type constructor and value constructor
 data BookReview = BookReview BookInfo CustomerID String
+
+-- synonyms: more descriptive name
+-- use to clarify fields:
+-- type = introduce a synonym
+type CustomerID = Int
+type ReviewBody = String
+
+data BetterReview = BetterReview BookInfo CustomerID ReviewBody
+
+-- type for shorter name (verbose type)
+-- usar como sinonimo para tupla:
+type BookRecord = (BookInfo, BookReview)
