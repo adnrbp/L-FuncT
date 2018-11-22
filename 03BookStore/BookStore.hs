@@ -30,3 +30,12 @@ data BetterReview = BetterReview BookInfo CustomerID ReviewBody
 -- type for shorter name (verbose type)
 -- usar como sinonimo para tupla:
 type BookRecord = (BookInfo, BookReview)
+
+type CardHolder = String
+type CardNumber = String
+type Address = [String]
+
+data BillingInfo= CreditCard CardNumber CardHolder Address
+				| CashOnDelivery
+				| Invoice CustomerID
+					deriving (Show)
