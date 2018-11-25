@@ -40,12 +40,29 @@ data BillingInfo= CreditCard CardNumber CardHolder Address
 				| Invoice CustomerID
 					deriving (Show)
 
+
+-- pattern match alg data type (using its value constructor)
+bookID 		(Book id title authors) = id -- obtener id si tiene esa estructura
+bookTitle 	(Book id title authors) = title
+bookAuthors	(Book id title authors) = authors
+
+-- omitir si tiene o no esos valores (wildcard "_")
 nicerID 		(Book id 	_		_ ) = id 
 nicerTitle 		(Book _ 	title	_ ) = title
 nicerAuthors	(Book _		_		authors) = authors
 
+-- using a record syntax #evitar repetitir accesors Book Book Book...
+-- define data type and accesors for each component (same time)
 data Customer = Customer {
-	customerID 		:: CustomerID,
+	customerID 		:: CustomerID, 	--int
 	customerName 	:: String,
-	customerAddress :: Address
+	customerAddress :: Address 	--list
 	} deriving (Show)
+
+-- using smae syntax
+ customer1 = Customer 276826 "B.K. Master"
+ 			["932 Denveri Cf",
+ 			"minder, CA 88235",
+ 			"Canada"]
+
+ 			
