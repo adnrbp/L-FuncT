@@ -60,9 +60,16 @@ data Customer = Customer {
 	} deriving (Show)
 
 -- using smae syntax
- customer1 = Customer 276826 "B.K. Master"
+customer1 = Customer 276826 "B.K. Master"
  			["932 Denveri Cf",
  			"minder, CA 88235",
  			"Canada"]
 
- 			
+customer2 = Customer {
+			 customerID = 985682,
+			 customerAddress = ["681593 high road",
+			 					"big rock, LI 934",
+			 					"MX"],
+			 customerName = "Jhon F. white"
+			}
+
